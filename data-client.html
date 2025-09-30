@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Client</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100dvh;
+      background-color: rgb(255, 145, 0);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: rgb(255, 145, 0);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    ul li {
+      position: relative;
+    }
+
+    ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    ul li ul.dropdown {
+      display: none;
+      position: absolute;
+      background: rgb(255, 145, 0);
+      border: 1px solid white;
+      width: max-content;
+      z-index: 999;
+    }
+
+    ul li:hover ul.dropdown {
+      display: block;
+    }
+
+    ul li ul.dropdown li {
+      display: block;
+    }
+
+    ul li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      padding: 10px;
+    }
+
+    .search-bar input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0 30px 0;
+      color: #fff;
+    }
+
+    .h2-produk {
+        text-align: center;
+        
+    }
+
+    .tabel {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      max-width: 850px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      background-color: rgb(255, 145, 0);
+      text-align: center;
+      color: #ffffff;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .row {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #000000;
+      background-color: #f8f9fa;
+    }
+
+    .row:hover {
+      background-color: rgb(255, 145, 0);
+      color: white;
+    }
+   .tabel-produk {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 850px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-produk {
+      background-color: rgb(255, 145, 0);
+      text-align: center;
+      color: #ffffff;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .row-produk {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #000000;
+      background-color: #f8f9fa;
+    }
+
+    .row-produk:hover {
+      background-color: rgb(255, 145, 0);
+      color: white;
+    }
+    /* Responsive behavior */
+    @media screen and (max-width: 768px) {
+      .tabel {
+        display: block;
+        padding: 10px;
+      }
+
+      .tabel .header {
+        display: none;
+      }
+
+      .tabel-produk{
+        display: block;
+        padding: 10px;
+      }
+
+      .tabel-produk .header-produk{
+        display: none;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        background: white;
+      }
+
+      .row-produk{
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        background: white;
+      }
+
+      /* Labeling for mobile */
+      .row::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: auto;
+      }
+
+      .row-produk::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: auto;
+      }
+
+      .row {
+        text-align: left;
+      }
+
+      .row-produk{
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li>
+      <a href="#">Produk Tersedia ⏷</a>
+      <ul class="dropdown">
+        <li><a href="#">Tepung Terigu</a></li>
+        <li><a href="#">Gula Pasir</a></li>
+        <li><a href="#">Keju Cheddar</a></li>
+        <li><a href="#">Coklat Batang</a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="search-bar">
+        <input type="text" placeholder="Cari produk..." />
+      </div>
+    </li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="login.html">Logout</a></li>
+  </ul>
+
+  <h2>Tabel Data Client</h2>
+  <div class="tabel">
+
+    <div class="header">No</div>
+    <div class="header">Nama</div>
+    <div class="header">Usia</div>
+    <div class="header">Gender</div>
+    <div class="header">Kota</div>
+
+    <div class="row" data-label="No">1</div>
+    <div class="row" data-label="Nama">Ucup</div>
+    <div class="row" data-label="Usia">37</div>
+    <div class="row" data-label="Gender">Laki-Laki</div>
+    <div class="row" data-label="Kota">Jakarta</div>
+
+    <div class="row" data-label="No">2</div>
+    <div class="row" data-label="Nama">Dita</div>
+    <div class="row" data-label="Usia">21</div>
+    <div class="row" data-label="Gender">Perempuan</div>
+    <div class="row" data-label="Kota">Pekanbaru</div>
+
+    <div class="row" data-label="No">3</div>
+    <div class="row" data-label="Nama">Mail</div>
+    <div class="row" data-label="Usia">23</div>
+    <div class="row" data-label="Gender">Laki-Laki</div>
+    <div class="row" data-label="Kota">Bandung</div>
+
+    <div class="row" data-label="No">4</div>
+    <div class="row" data-label="Nama">Adel</div>
+    <div class="row" data-label="Usia">30</div>
+    <div class="row" data-label="Gender">Perempuan</div>
+    <div class="row" data-label="Kota">Medan</div>
+
+    <div class="row" data-label="No">5</div>
+    <div class="row" data-label="Nama">Indi</div>
+    <div class="row" data-label="Usia">19</div>
+    <div class="row" data-label="Gender">Perempuan</div>
+    <div class="row" data-label="Kota">Tebing Tinggi</div>
+  </div>
+
+    <h2>Tabel Data Produk</h2>
+  <div class="tabel-produk">
+    <div class="header-produk">Produk</div>
+    <div class="header-produk">Harga</div>
+
+    <div class="row-produk" data-label="Produk">Tepung Terigu</div>
+    <div class="row-produk" data-label="Harga">Rp 12.000</div>
+    <div class="row-produk" data-label="Produk">Keju</div>
+    <div class="row-produk" data-label="Harga">Rp 6.200</div>
+
+    <div class="row-produk" data-label="Produk">Gula Pasir</div>
+    <div class="row-produk" data-label="Harga">Rp 31.800</div>
+    <div class="row-produk" data-label="Produk">Mentega</div>
+    <div class="row-produk" data-label="Harga">Rp 9.500</div>
+  </div>
+</body>
+</html>

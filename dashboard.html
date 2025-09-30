@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    ul {
+      list-style: none;
+      background: rgb(255, 145, 0);
+    }
+
+    ul li {
+      display: inline-block;
+      position: relative;
+    }
+
+    ul li a {
+      display: block;
+      padding: 20px 25px;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    ul li ul.dropdown li {
+      display: block;
+    }
+
+    ul li ul.dropdown {
+      width: 100%;
+      background: rgb(255, 145, 0);
+      position: absolute;
+      z-index: 999;
+      display: none;
+      border: 1px solid rgb(255, 255, 255);
+    }
+
+    ul li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    ul li:hover ul.dropdown {
+      display: block;
+    }
+
+    .search-bar input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    .container {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #ff8c00;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+  <body>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Produk Tersedia ⏷</a>
+        <ul class="dropdown">
+          <li><a href="#">Tepung Terigu</a></li>
+          <li><a href="#">Gula Pasir</a></li>
+          <li><a href="#">Keju Cheddar</a></li>
+          <li><a href="#">Coklat Batang</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="search-bar">
+          <input type="text" placeholder="Cari produk..." />
+        </div>
+      </li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+
+    <div class="container">
+      <div class="card">
+        <img
+          src="https://i.gojekapi.com/darkroom/gomart-public-production/v2/images/public/images/e66d4d8d-35f3-4a27-89f2-26d4869a54e8_Segitiga-Biru-Tepung-Terigu-1-kg.jpg"
+          alt="Tepung"
+        />
+        <div class="card-content">
+          <h3>Tepung Terigu</h3>
+          <p class="price">Rp 12.000</p>
+          <p>Tepung terigu serbaguna dengan tekstur halus dan putih bersih, cocok untuk berbagai olahan seperti kue, roti, gorengan, hingga mie.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://image.astronauts.cloud/product-images/2024/10/GulakuKuningGulaPasir500gr_616a8b5d-a7a6-4bfe-a40c-ee355d1011d5_900x900.jpg" alt="Gula" />
+        <div class="card-content">
+          <h3>Gula Pasir</h3>
+          <p class="price">Rp 31.800</p>
+          <p>Gula pasir putih berkualitas, bertekstur halus dan mudah larut. Cocok untuk pemanis minuman, masakan, dan berbagai jenis kue.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//90/MTA-3408146/kraft_keju-kraft-30gr-cheddar_full02.jpg" alt="Keju" />
+        <div class="card-content">
+          <h3>Keju</h3>
+          <p class="price">Rp 6.200</p>
+          <p>Keju parut dengan rasa gurih dan tekstur yang lembut namun padat. Cocok untuk topping, isian, atau camilan.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//95/MTA-13183718/blue_band_blue_band_mentega_-200_g-_full01_hka3s03n.jpg"
+          alt="Susu"
+        />
+        <div class="card-content">
+          <h3>Mentega</h3>
+          <p class="price">Rp 9.500</p>
+          <p>Mentega berkualitas tinggi dengan rasa gurih dan tekstur lembut, ideal untuk memasak, memanggang, atau olesan roti.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

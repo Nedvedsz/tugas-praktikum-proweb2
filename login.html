@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <form action="dashboard.html">
+          <h1>Toko Bahan Kue</h1>
+          <hr />
+          <h2>Login</h2>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="nama"
+            placeholder="Masukkan Username"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Masukkan Password"
+            required
+          />
+
+          <div class="ingat-lupa">
+            <label><input type="checkbox" />Ingat Saya</label>
+            <label><a href="">Lupa Password?</a><label>
+          </div>
+
+          <button type="submit">Login</button>
+
+          <div style="text-align: center; margin-top: 5px">
+            Belum ada akun? <a href="#">Daftar</a>
+          </div>
+          <div style="margin-top: 5px; text-align: center">
+            Admin? Login <a href="admin.html">Here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
